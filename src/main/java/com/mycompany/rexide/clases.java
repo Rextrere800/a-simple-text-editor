@@ -15,9 +15,9 @@ import java.io.*;
 public class clases {
     
 
-    public static void definirContenido(Object o){
+    public static void definirContenido(Object o, String s){
         try{
-            File archivo = new File("new.txt");
+            File archivo = new File(s);
 
                 
             if (!archivo.exists()){
@@ -31,7 +31,10 @@ public class clases {
                 e.printStackTrace();
             }
         
+        
+        
     }
 
-    
+    static boolean definido = false;
+    static String nombre;
 }

@@ -5,6 +5,7 @@
  */
 package com.mycompany.rexide;
 import java.io.*;
+import javax.swing.*;
 /**
  *
  * @author mprietoe
@@ -73,7 +74,16 @@ public class Ventan extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         clases texto = new clases();
-        clases.definirContenido(jEditorPane1.getText());
+        if (!clases.definido){
+            clases.nombre = JOptionPane.showInputDialog("Ingresa el nombre del archivo: ");
+            clases.definirContenido(jEditorPane1.getText(), clases.nombre + ".txt");
+        }else{
+            clases.definirContenido(jEditorPane1.getText(), clases.nombre + ".txt");
+        }
+            
+
+           
+        clases.definido = true;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
